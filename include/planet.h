@@ -4,7 +4,7 @@
 
 #ifndef SOLAR_SYSTEM_PLANET_H
 #define SOLAR_SYSTEM_PLANET_H
-
+#include <string>
 #endif //SOLAR_SYSTEM_PLANET_H
 
 namespace solarsystem {
@@ -84,6 +84,11 @@ namespace solarsystem {
 
     private:
         /**
+         * Name of planet
+         */
+        std::string name_; 
+        
+        /**
          * The rotation of the planet
          */
          float rotation
@@ -107,11 +112,7 @@ namespace solarsystem {
          * The radius of the planet
          */
         float radius_;
-
-        /**
-         * The mass of the planet
-         */
-        float mass_;
+        
 
         /**
          * The color of the planet
@@ -124,6 +125,6 @@ namespace solarsystem {
          * @param radius of planet
          * @param color of planet
          */
-        Planet(float mass, float radius, const std::string& color, float position_x, float position_y, float velocity_x, float velocity_y, float tilt, float axis);
+        Planet(const std::string& name, float radius, const std::string& color, float position_x, float position_y, float velocity_x, float velocity_y, float tilt, float axis, std::string description);
     };
 }
