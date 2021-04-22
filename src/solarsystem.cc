@@ -31,12 +31,9 @@ namespace solarsystem {
             ci::gl::color(ci::Color(planets_[i].GetColor()));
             ci::gl::drawSolidCircle(CalculatePosition(planets_[i]),
                                     planets_[i].GetRadius(), 40);
-            /*ci::gl::color(ci::Color("white"));
-            ci::gl::drawStrokedRect(
-                    ci::Rectf(vec2(x_boundary_begins_, y_boundary_begins_),
-                              vec2(x_boundary_ends_, y_boundary_ends_)));
-        }*/
+            
     }
+        //Change from circles to spheres
     }
 
     void SolarSystem::AdvanceOneFrame() {
@@ -58,8 +55,4 @@ namespace solarsystem {
         std::ifstream input_file(file_, std::ifstream::binary);
         //input_file >> planets_;
     }
-
-
-}
-
-
+} //namespace solarsystem
