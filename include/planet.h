@@ -22,6 +22,14 @@ namespace solarsystem {
             return color_;
         }
         
+        float GetAngle() const{
+            return degree_from_center_;
+        }
+        
+        float GetDistance() const {
+            return distance_from_center_;
+        }
+        
         
     private:
         /**
