@@ -1,0 +1,76 @@
+{
+  "planets": [
+    {
+      "name_": "Sun",
+      "radius_": 100,
+      "color_": "yellow",
+      "degree_from_center_": 0,
+      "distance_from_center_": 0,
+      "description": "Moons: None \nDistance from Sun: 35.98 million mi\nRadius: 1,516 mi\nDiameter: 4,879 km\nOrbital period: 88 days\nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C"
+    },
+    {
+      "name": "Mercury",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 10,
+      "description": "Radius: 432,690 mi\nDiameter: 1.3927 million km\nMass: 31.989 × 10^30 kg\nSurface Temperature: 5,505°C\nNumber of Moons: None\nFirst Record: 14th century BCE by Assyrian astronomers"
+    },
+    {
+      "name": "Venus",
+      "radius": 20,
+      "color": "gray",
+      "degree_from_center_": 38,
+      "distance_from_center_": 45,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Earth",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 50,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Mars",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 80,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Jupiter",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 90,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Saturn",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 150,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Uranus",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 200,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    },
+    {
+      "name": "Neptune",
+      "radius": 10,
+      "color": "gray",
+      "degree_from_center_": 5,
+      "distance_from_center_": 300,
+      "description": "Distance from Sun: 67.24 million mi\nRadius: 3,760 mi\nDiameter: 7,520.8 mi\nOrbital period: 225 days\nMass: 4.867 × 10^24 kg 0.815 \nSurface Temperature: 462°C\nNumber of Moons: None\nFirst Recorded: 17th century BCE by Babylon astronomers"
+    }
+  ]
+}
