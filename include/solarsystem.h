@@ -24,7 +24,18 @@ namespace solarsystem {
          * Updates the positions of all planets
          */
         void AdvanceOneFrame();
+
+        /**
+         * Calculates circular position of planet based on degree from center
+         * @param planet 
+         * @return vector containing x and y position of planet
+         */
+        glm::vec2 CalculatePosition(Planet planet) const;
         
+        /**
+         * Parses data from JSON
+         * @param file_ JSON
+         */
         void ParseData(std::string file_);
 
         std::vector<Planet> GetPlanets() const {
@@ -38,12 +49,17 @@ namespace solarsystem {
         float GetYDimension() {
             return center.y * 2;
         }
-
-        glm::vec2 CalculatePosition(Planet planet) const;
+        
     private:
+        /**
+         * Dimension for center of screen
+         */
         glm::vec2 center;
         
+        /**
+         * Vector containing planets belonging to solar system
+         */
         std::vector<Planet> planets_;
     };
 
-} 
+} //namespace solarsystem
