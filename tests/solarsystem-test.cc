@@ -28,6 +28,7 @@ TEST_CASE("Test correctly initializes solarsystem") {
         REQUIRE(solarSystem.GetXDimension() == 500);
         REQUIRE(solarSystem.GetYDimension() == 800);
     }
+    
     SECTION("Test solarsystem planet loading by name") {
         REQUIRE(solarSystem.GetPlanets().at(8).GetName() == solarsystem::Planet::NEPTUNE.GetName());
         REQUIRE(solarSystem.GetPlanets().at(7).GetName() == solarsystem::Planet::URANUS.GetName());
