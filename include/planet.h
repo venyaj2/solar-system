@@ -13,75 +13,16 @@ namespace solarsystem {
 
         Planet();
 
-        /*
-         * Enum for Mercury
-         */
-        static const Planet MERCURY;
-
-        /*
-         * Enum for Venus
-         */
-        static const Planet VENUS;
-
-        /*
-         * Enum for Earth
-         */
-        static const Planet EARTH;
-
-        /*
-        * Enum for Mars
-        */
-        static const Planet MARS;
-
-        /*
-        * Enum for Jupiter
-        */
-        static const Planet JUPITER;
-
-        /*
-        * Enum for Saturn
-        */
-        static const Planet SATURN;
-
-        /*
-        * Enum for Uranus
-        */
-        static const Planet URANUS;
-
-        /*
-        * Enum for Neptune
-        */
-        static const Planet NEPTUNE;
-        
-        glm::vec2 GetPosition() const{
-            return position;
-        }
-
-        glm::vec2 GetVelocity() const{
-            return velocity;
-        }
-
-        void SetPosition(const glm::vec2 set_position){
-            position = set_position;
-        }
-
-        void SetVelocity(float x_velocity, float y_velocity) {
-            glm::vec2 temp_velocity(x_velocity, y_velocity);
-            velocity = temp_velocity;
-        }
-
         float GetRadius() const{
             return radius_;
         }
-
-        float GetMass() const{
-            return mass_;
-        }
+        
 
         char* GetColor() const{
             return color_;
         }
-
+        
+        
     private:
         /**
          * Name of planet
@@ -89,24 +30,14 @@ namespace solarsystem {
         std::string name_; 
         
         /**
-         * The rotation of the planet
+         * The distance of planet from center
          */
-         float rotation
-         
-         /**
-          * The axis tilt of planet
-          */
-        float tilt_;
-         
-        /**
-         * The position of the planet
-         */
-        glm::vec2 position_;
+         float distance_from_center_;
 
         /**
-         * The velocity of the planet
+         * The degree from the center of what is being revolved
          */
-        glm::vec2 velocity_;
+        float degree_from_center_;
 
         /**
          * The radius of the planet
@@ -118,6 +49,11 @@ namespace solarsystem {
          * The color of the planet
          */
         char* color_;
+        
+        /**
+         * The description of the planet
+         */
+         float description_;
 
         /**
          * Creates a new planet instance
@@ -125,6 +61,6 @@ namespace solarsystem {
          * @param radius of planet
          * @param color of planet
          */
-        Planet(const std::string& name, float radius, const std::string& color, float position_x, float position_y, float velocity_x, float velocity_y, float tilt, float axis, std::string description);
+        Planet(const std::string& name, float radius, const std::string& color, float degree_from_center, float distance_from_center, std::string description);
     };
 }
