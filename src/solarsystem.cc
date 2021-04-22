@@ -8,7 +8,7 @@ namespace solarsystem {
     using glm::vec2;
     
     solarsystem::SolarSystem::SolarSystem(float dimension_x, float dimension_y) {
-        if (dimension_x < 0 || dimension_y < 0) {
+        if (dimension_x <= 0 || dimension_y <= 0) {
             throw std::invalid_argument("Entered invalid dimension");
         }
         
