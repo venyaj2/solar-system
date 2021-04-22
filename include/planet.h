@@ -11,6 +11,14 @@ namespace solarsystem {
     
     class Planet {
     public:
+        
+        /**
+             * Creates a new planet instance
+             * @param mass of planet
+             * @param radius of planet
+             * @param color of planet
+             */
+        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center, std::string description);
 
         Planet();
 
@@ -37,6 +45,10 @@ namespace solarsystem {
         
         void SetDegree(float degree) {
             degree_from_center_ = degree;
+        }
+        
+        std::string GetDescription() const {
+            return description_;
         }
         
         /**
@@ -83,14 +95,6 @@ namespace solarsystem {
          * Enum for Neptune
          */
         static const Planet NEPTUNE;
-
-        /**
-             * Creates a new planet instance
-             * @param mass of planet
-             * @param radius of planet
-             * @param color of planet
-             */
-        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center, std::string description);
 
     private:
         /**
