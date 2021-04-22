@@ -10,6 +10,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
+#include <solarsystem.h>
 
 
 namespace solarsystem {
@@ -22,6 +23,11 @@ namespace solarsystem {
         SolarSystemApp();
 
         void draw() override;
+
         void update() override;
-        
-}  // namespace solarsystem
+
+    private:
+        solarsystem::SolarSystem solarsystem = SolarSystem(700, 700);
+
+    };
+}// namespace solarsystem
