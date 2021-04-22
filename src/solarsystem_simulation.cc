@@ -8,18 +8,18 @@
 namespace solarsystem {
 
     SolarSystemApp::SolarSystemApp() {
-        ci::app::setWindowSize(800, 800);
+        ci::app::setWindowSize(solarsystem.GetXDimension(), solarsystem.GetYDimension());
     }
 
-    void IdealGasApp::draw() {
+    void SolarSystemApp::draw() {
         ci::Color background_color("black");
         ci::gl::clear(background_color);
 
-        //container_.Display();
+        solarsystem.Display();
     }
 
-    /*void IdealGasApp::update() {
-        container_.AdvanceOneFrame();
-    }*/
+    void SolarSystemApp::update() {
+        solarsystem.AdvanceOneFrame();
+    }
 
 }  // namespace solarsystem
