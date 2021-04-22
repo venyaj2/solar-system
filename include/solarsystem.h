@@ -39,10 +39,9 @@ namespace solarsystem {
             return center.y * 2;
         }
 
+        glm::vec2 CalculatePosition(Planet planet) const;
     private:
         glm::vec2 center;
-        
-        glm::vec2 CalculatePosition(Planet planet) const;
         
         std::vector<Planet> planets_;
     };
