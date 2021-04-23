@@ -29,8 +29,26 @@ namespace solarsystem {
     void SolarSystem::Display() {
         for (size_t i = 0; i < planets_.size(); i++) {
             ci::gl::color(ci::Color(planets_[i].GetColor()));
-            ci::gl::drawSolidCircle(CalculatePosition(planets_[i]),
-                                    planets_[i].GetRadius(), 40);
+            /*ci::gl::drawSolidCircle(CalculatePosition(planets_[i]),
+                                    planets_[i].GetRadius(), 40);*/
+            
+            
+            glm::vec3 vector(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, planets_[i].GetRadius() / 2.0);
+            ci::gl::drawSphere(vector, planets_[i].GetRadius());
+             
+            //https://libcinder.org/docs/guides/opengl/part2.html
+            /*ci::gl::enableDepthRead();
+            ci::gl::enableDepthWrite();
+
+            cinder::CameraPersp cam;
+            cam.lookAt(glm::vec3(planets_[i].GetRadius(), planets_[i].GetRadius(), planets_[i].GetRadius()), glm::vec3(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, 0) );
+            ci::gl::setMatrices( cam );
+            
+            auto lambert = ci::gl::ShaderDef().lambert();
+            auto shader = ci::gl::getStockShader( lambert );
+            shader->bind();
+            
+            ci::gl::drawSphere(glm::vec3(), planets_[i].GetRadius()/100.0, 40);*/
             
     }
         //Change from circles to spheres
@@ -38,7 +56,7 @@ namespace solarsystem {
 
     void SolarSystem::AdvanceOneFrame() {
         for (size_t i = 0; i < planets_.size(); i++) {
-            planets_[i].SetDegree(planets_[i].GetAngle() + 1);
+            planets_[i].SetDegree(planets_[i].GetAngle() + planets_[i].GetVelocity());
         }
         
         //To Do: Change distance based on ellipse
