@@ -18,7 +18,8 @@ namespace solarsystem {
              * @param radius of planet
              * @param color of planet
              */
-        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center, std::string description);
+        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center, std::string description,
+               float velocity);
 
         Planet();
 
@@ -49,6 +50,10 @@ namespace solarsystem {
         
         std::string GetDescription() const {
             return description_;
+        }
+        
+        float GetVelocity() {
+            return velocity_;
         }
         
         /**
@@ -127,6 +132,10 @@ namespace solarsystem {
          * The description of the planet
          */
          std::string description_;
-
+         
+         /**
+          * The velocity of the planet 
+          */
+          float velocity_;
     };
 }
