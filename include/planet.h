@@ -100,6 +100,7 @@ namespace solarsystem {
          * Enum for Neptune
          */
         static const Planet NEPTUNE;
+        
 
     private:
         /**
@@ -137,5 +138,6 @@ namespace solarsystem {
           * The velocity of the planet 
           */
           float velocity_;
+          
     };
 }
