@@ -3,6 +3,10 @@
 #include "../include/solarsystem.h"
 
 #include <fstream>
+#include "planet.h"
+
+
+
 namespace solarsystem {
 
     using glm::vec2;
@@ -27,28 +31,15 @@ namespace solarsystem {
     }
 
     void SolarSystem::Display() {
+        DisplayStars();
+        
         for (size_t i = 0; i < planets_.size(); i++) {
             ci::gl::color(ci::Color(planets_[i].GetColor()));
-            /*ci::gl::drawSolidCircle(CalculatePosition(planets_[i]),
-                                    planets_[i].GetRadius(), 40);*/
+            ci::gl::drawSolidCircle(CalculatePosition(planets_[i]),
+                                    planets_[i].GetRadius(), 40);
             
-            
-            glm::vec3 vector(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, planets_[i].GetRadius() / 2.0);
-            ci::gl::drawSphere(vector, planets_[i].GetRadius());
-             
-            //https://libcinder.org/docs/guides/opengl/part2.html
-            /*ci::gl::enableDepthRead();
-            ci::gl::enableDepthWrite();
-
-            cinder::CameraPersp cam;
-            cam.lookAt(glm::vec3(planets_[i].GetRadius(), planets_[i].GetRadius(), planets_[i].GetRadius()), glm::vec3(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, 0) );
-            ci::gl::setMatrices( cam );
-            
-            auto lambert = ci::gl::ShaderDef().lambert();
-            auto shader = ci::gl::getStockShader( lambert );
-            shader->bind();
-            
-            ci::gl::drawSphere(glm::vec3(), planets_[i].GetRadius()/100.0, 40);*/
+            /*glm::vec3 vector(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, planets_[i].GetRadius() / 2.0);
+            ci::gl::drawSphere(vector, planets_[i].GetRadius());*/
             
     }
         //Change from circles to spheres
@@ -73,4 +64,13 @@ namespace solarsystem {
         std::ifstream input_file(file_, std::ifstream::binary);
         //input_file >> planets_;
     }
+
+    void SolarSystem::DisplayStars() {
+        ci::gl::color(ci::Color("white"));
+        for (size_t j = 0; j < GetXDimension() * GetYDimension() / (GetXDimension() + GetYDimension() / 2); j++) {
+            glm::vec2 position_(rand() % (int)GetXDimension(), rand() % (int)GetYDimension());
+            ci::gl::drawSolidCircle(position_, (rand() % 100) /100.0, 40);
+        }
+    }
+    
 } //namespace solarsystem

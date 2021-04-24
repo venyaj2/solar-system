@@ -49,7 +49,8 @@ namespace solarsystem {
         float GetYDimension() {
             return center.y * 2;
         }
-        
+
+        void DisplayStars();
     private:
         /**
          * Dimension for center of screen
