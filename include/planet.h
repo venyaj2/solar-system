@@ -6,6 +6,9 @@
 #define SOLAR_SYSTEM_PLANET_H
 #include <string>
 #endif //SOLAR_SYSTEM_PLANET_H
+#include <vector>
+#include <moon.h>
+//#include <moon.h>
 
 namespace solarsystem {
     
@@ -18,8 +21,8 @@ namespace solarsystem {
              * @param radius of planet
              * @param color of planet
              */
-        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center, std::string description,
-               float velocity);
+        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center_x, float distance_from_center_y, std::string description,
+               float velocity, size_t number_of_moons);
 
         Planet();
 
@@ -36,8 +39,12 @@ namespace solarsystem {
             return degree_from_center_;
         }
         
-        float GetDistance() const {
-            return distance_from_center_;
+        float GetDistanceX() const {
+            return distance_from_center_x_;
+        }
+        
+        float GetDistanceY() const {
+            return distance_from_center_y_;
         }
         
         std::string GetName() const {
@@ -55,6 +62,10 @@ namespace solarsystem {
         float GetVelocity() {
             return velocity_;
         }
+        
+        /*std::vector<solarsystem::Moon> GetMoons() const {
+            return moons;
+        }*/
         
         /**
          * Enum for Sun
@@ -104,14 +115,24 @@ namespace solarsystem {
 
     private:
         /**
+         * Moons
+         */
+         //std::vector<Moon> moons;
+        
+        /**
          * Name of planet
          */
         std::string name_; 
         
         /**
-         * The distance of planet from center
+         * The distance of planet from center x
          */
-         float distance_from_center_;
+         float distance_from_center_x_;
+         
+         /**
+          * The distance of the planet from center y
+          */
+          float distance_from_center_y_;
 
         /**
          * The degree from the center of what is being revolved
