@@ -30,7 +30,9 @@ namespace solarsystem {
          * @param planet 
          * @return vector containing x and y position of planet
          */
-        glm::vec2 CalculatePosition(Planet planet) const;
+        glm::vec2 CalculatePositionPlanet(Planet planet) const;
+
+        glm::vec2 CalculatePositionMoons(Moon moon, glm::vec2 planet_position) const;
         
         /**
          * Parses data from JSON
