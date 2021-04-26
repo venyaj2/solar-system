@@ -27,7 +27,7 @@ namespace solarsystem {
         void update() override;
 
     private:
-        solarsystem::SolarSystem solarsystem = SolarSystem(700, 700);
+        solarsystem::SolarSystem solarsystem = SolarSystem(900, 900);
 
     };
 }// namespace solarsystem

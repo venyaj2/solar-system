@@ -36,15 +36,16 @@ namespace solarsystem {
         for (size_t i = 0; i < planets_.size(); i++) {
             ci::gl::color(ci::Color(planets_[i].GetColor()));
             
+            glm::vec2 position (CalculatePositionPlanet(planets_[i]));
             
-            ci::gl::drawSolidCircle(CalculatePositionPlanet(planets_[i]),
+            ci::gl::drawSolidCircle(position,
                                     planets_[i].GetRadius(), 40);
             
-            /*for (size_t j = 0; j < planets_[i].GetMoons().size(); i++) {
+            for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
                 ci::gl::color(ci::Color("gray"));
-                ci::gl::drawSolidCircle(CalculatePositionMoons(planets_[i].GetMoons()[j], CalculatePositionPlanet(planets_[i])),
+                ci::gl::drawSolidCircle(CalculatePositionMoons(planets_[i].GetMoons()[j], position),
                                         planets_[i].GetMoons()[j].GetRadius(), 40);
-            }*/
+            }
             
             /*glm::vec3 vector(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, planets_[i].GetRadius() / 2.0);
             ci::gl::drawSphere(vector, planets_[i].GetRadius());*/
@@ -56,9 +57,9 @@ namespace solarsystem {
     void SolarSystem::AdvanceOneFrame() {
         for (size_t i = 0; i < planets_.size(); i++) {
             planets_[i].SetDegree(planets_[i].GetAngle() + planets_[i].GetVelocity());
-            /*for (size_t j = 0; j < planets_[i].GetMoons().size(); i++ ) {
+            for (size_t j = 0; j < planets_[i].GetMoons().size(); j++ ) {
                 planets_[i].GetMoons()[j].SetDegree(planets_[i].GetMoons()[j].GetAngle() + planets_[i].GetMoons()[j].GetVelocity());
-            }*/
+            }
         }
         
         //To Do: Change distance based on ellipse
@@ -77,10 +78,10 @@ namespace solarsystem {
         //In between, must be leading up to other distance
     }
 
-    void SolarSystem::ParseData(std::string file_) {
+    /*void SolarSystem::ParseData(std::string file_) {
         std::ifstream input_file(file_, std::ifstream::binary);
         //input_file >> planets_;
-    }
+    }*/
 
     void SolarSystem::DisplayStars() {
         ci::gl::color(ci::Color("white"));
