@@ -30,11 +30,9 @@ namespace solarsystem {
         distance_from_center_x_ = distance_from_center_x;
         description_ = description;
         velocity_ = velocity;
-        /*moons.resize(number_of_moons);
         for (size_t i = 0; i < number_of_moons; i++) {
-            solarsystem::Moon moon(degree_from_center, radius + 1, velocity / 2);
-            moons[i] = moon;
-        }*/
+            moons.push_back(Moon(2, radius_ * 2, 2, radius_ / 2.0));
+        }
     }
     
 
@@ -49,14 +47,14 @@ namespace solarsystem {
 
     const Planet Planet::EARTH = Planet("Earth", 10, "green", 97, 90, 95, "Earth", 1.3, 1);
 
-    const Planet Planet::MARS = Planet("Mars", 8, "red", 137, 115, 130, "Mars", 1, 2);
+    const Planet Planet::MARS = Planet("Mars", 8, "red", 137, 200, 130, "Mars", 1, 1);
 
-    const Planet Planet::JUPITER = Planet("Venus", 17, "orange", 200, 220, 240, "Jupiter", .8, 5);
+    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 1);
 
-    const Planet Planet::SATURN = Planet("Venus", 14, "yellow", 193, 260, 280, "Saturn", .7, 5);
+    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 300, 320, "Saturn", .7, 1);
 
-    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 315, 320, "Uranus", .3, 4);
+    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 390, 370, "Uranus", .3, 1);
 
-    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 340, 320, "Neptune", .2, 3);
+    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 450, 410, "Neptune", .2, 1);
     
 } //namespace solarsystem

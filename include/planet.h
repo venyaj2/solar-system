@@ -63,9 +63,9 @@ namespace solarsystem {
             return velocity_;
         }
         
-        /*std::vector<solarsystem::Moon> GetMoons() const {
+        std::vector<solarsystem::Moon> GetMoons() const {
             return moons;
-        }*/
+        }
         
         /**
          * Enum for Sun
@@ -117,7 +117,7 @@ namespace solarsystem {
         /**
          * Moons
          */
-         //std::vector<Moon> moons;
+         std::vector<Moon> moons;
         
         /**
          * Name of planet
