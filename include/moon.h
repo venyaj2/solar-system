@@ -19,7 +19,7 @@ namespace solarsystem {
              * @param color of planet
              */
         Moon(float degree_from_center, float distance_from_center,
-               float velocity);
+               float velocity, float radius);
 
         Moon();
 
@@ -49,22 +49,23 @@ namespace solarsystem {
         /**
          * The distance of planet from center
          */
-        float distance_from_center_{};
+        float distance_from_center_;
 
         /**
          * The degree from the center of what is being revolved
          */
-        float degree_from_center_{};
+        float degree_from_center_;
 
         /**
          * The radius of the planet
          */
-        float radius_{};
+        float radius_;
 
         /**
          * The velocity of the planet 
          */
-        float velocity_{};
+        float velocity_;
+        
 
     };
 }
