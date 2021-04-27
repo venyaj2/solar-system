@@ -7,7 +7,7 @@
 #include <string>
 #endif //SOLAR_SYSTEM_PLANET_H
 #include <vector>
-#include <moon.h>
+#include "moon.h"
 //#include <moon.h>
 
 namespace solarsystem {
@@ -30,7 +30,6 @@ namespace solarsystem {
             return radius_;
         }
         
-
         char* GetColor() const{
             return color_;
         }
@@ -112,6 +111,7 @@ namespace solarsystem {
          */
         static const Planet NEPTUNE;
         
+        //float AdvanceOneFrameMoon();
 
     private:
         /**

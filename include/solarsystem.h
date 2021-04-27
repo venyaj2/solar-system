@@ -3,7 +3,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include <planet.h>
+#include "planet.h"
 #include <vector>
 
 
@@ -32,7 +32,7 @@ namespace solarsystem {
          */
         glm::vec2 CalculatePositionPlanet(Planet planet) const;
 
-        glm::vec2 CalculatePositionMoons(Moon moon, glm::vec2 planet_position) const;
+        glm::vec2 CalculatePositionMoons(Moon moon);
         
         /**
          * Parses data from JSON
@@ -54,6 +54,12 @@ namespace solarsystem {
 
         void DisplayStars();
     private:
+        
+        /**
+         * Holding
+         */
+        float holding_;
+        
         /**
          * Dimension for center of screen
          */

@@ -2,7 +2,7 @@
 #include "cinder/gl/gl.h"
 #include "../include/solarsystem.h"
 
-#include <fstream>
+#include <iostream>
 #include "planet.h"
 
 
@@ -28,6 +28,8 @@ namespace solarsystem {
         planets_.push_back(Planet::URANUS);
         planets_.push_back(Planet::NEPTUNE);
         
+        holding_ = 0;
+        
     }
 
     void SolarSystem::Display() {
@@ -43,7 +45,7 @@ namespace solarsystem {
             
             for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
                 ci::gl::color(ci::Color("gray"));
-                ci::gl::drawSolidCircle(CalculatePositionMoons(planets_[i].GetMoons()[j], position),
+                ci::gl::drawSolidCircle(position + CalculatePositionMoons(planets_[i].GetMoons()[j]),
                                         planets_[i].GetMoons()[j].GetRadius(), 40);
             }
             
@@ -57,11 +59,11 @@ namespace solarsystem {
     void SolarSystem::AdvanceOneFrame() {
         for (size_t i = 0; i < planets_.size(); i++) {
             planets_[i].SetDegree(planets_[i].GetAngle() + planets_[i].GetVelocity());
-            for (size_t j = 0; j < planets_[i].GetMoons().size(); j++ ) {
-                planets_[i].GetMoons()[j].SetDegree(planets_[i].GetMoons()[j].GetAngle() + planets_[i].GetMoons()[j].GetVelocity());
+            for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
+                holding_ = planets_[i].GetMoons()[j].UpdateDegree();
             }
         }
-        
+
         //To Do: Change distance based on ellipse
     }
 
@@ -77,11 +79,7 @@ namespace solarsystem {
         //Whenever 90 degrees or 270 degrees, must be y distance
         //In between, must be leading up to other distance
     }
-
-    /*void SolarSystem::ParseData(std::string file_) {
-        std::ifstream input_file(file_, std::ifstream::binary);
-        //input_file >> planets_;
-    }*/
+    
 
     void SolarSystem::DisplayStars() {
         ci::gl::color(ci::Color("white"));
@@ -91,9 +89,9 @@ namespace solarsystem {
         }
     }
 
-    glm::vec2 SolarSystem::CalculatePositionMoons(Moon moon, glm::vec2 planet_position) const {
-        float x_pos_ = planet_position.x + moon.GetDistance() * cos(moon.GetAngle() * M_PI / 180);
-        float y_pos_ = planet_position.y + moon.GetDistance() * sin(moon.GetAngle() * M_PI / 180);
+    glm::vec2 SolarSystem::CalculatePositionMoons(Moon moon) {
+        float x_pos_ = moon.GetDistance() * cos(180 - holding_ * M_PI / 180);
+        float y_pos_ = moon.GetDistance() * sin(180 - holding_ * M_PI / 180);
         glm::vec2 position(x_pos_, y_pos_);
         return position;
     }

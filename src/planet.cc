@@ -3,7 +3,7 @@
 //
 
 #include "cinder/gl/gl.h"
-
+#include <iostream>
 #include <planet.h>
 #include <vector>
 #include <moon.h>
@@ -31,7 +31,8 @@ namespace solarsystem {
         description_ = description;
         velocity_ = velocity;
         for (size_t i = 0; i < number_of_moons; i++) {
-            moons.push_back(Moon(2, radius_ * 2, 2, radius_ / 2.0));
+            Moon moon((rand() % 360), radius_ * 2, 2, radius_ / 2);
+            moons.push_back(moon);
         }
     }
     
@@ -49,12 +50,13 @@ namespace solarsystem {
 
     const Planet Planet::MARS = Planet("Mars", 8, "red", 137, 200, 130, "Mars", 1, 1);
 
-    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 1);
+    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 4);
 
-    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 300, 320, "Saturn", .7, 1);
+    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 300, 320, "Saturn", .7, 3);
 
-    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 390, 370, "Uranus", .3, 1);
+    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 360, 340, "Uranus", .3, 2);
 
-    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 450, 410, "Neptune", .2, 1);
+    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 400, 400, "Neptune", .2, 2);
     
+
 } //namespace solarsystem
