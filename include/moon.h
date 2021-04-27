@@ -2,6 +2,7 @@
 // Created by Venya Joshi on 4/24/21.
 //
 
+
 #ifndef SOLAR_SYSTEM_MOON_H
 #define SOLAR_SYSTEM_MOON_H
 #pragma once
@@ -35,19 +36,16 @@ namespace solarsystem {
             return distance_from_center_;
         }
 
-        void SetDegree(float degree) {
-            degree_from_center_ = degree;
-        }
+        float UpdateDegree();
 
         float GetVelocity() {
             return velocity_;
         }
-
-
+        
     private:
-
+        
         /**
-         * The distance of planet from center
+         * The distance of moon from center
          */
         float distance_from_center_;
 
