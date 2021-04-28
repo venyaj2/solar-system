@@ -28,8 +28,6 @@ namespace solarsystem {
         planets_.push_back(Planet::URANUS);
         planets_.push_back(Planet::NEPTUNE);
         
-        holding_ = 0;
-        
     }
 
     void SolarSystem::Display() {
@@ -60,7 +58,7 @@ namespace solarsystem {
         for (size_t i = 0; i < planets_.size(); i++) {
             planets_[i].SetDegree(planets_[i].GetAngle() + planets_[i].GetVelocity());
             for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
-                holding_ = planets_[i].GetMoons()[j].UpdateDegree();
+                planets_[i].GetMoons()[j].SetAngle(planets_[i].GetMoons()[j].GetAngle() + planets_[i].GetMoons()[j].GetVelocity());
             }
         }
 
@@ -90,8 +88,8 @@ namespace solarsystem {
     }
 
     glm::vec2 SolarSystem::CalculatePositionMoons(Moon moon) {
-        float x_pos_ = moon.GetDistance() * cos(180 - holding_ * M_PI / 180);
-        float y_pos_ = moon.GetDistance() * sin(180 - holding_ * M_PI / 180);
+        float x_pos_ = moon.GetDistance() * cos(180 - moon.GetAngle() * M_PI / 180);
+        float y_pos_ = moon.GetDistance() * sin(180 - moon.GetAngle() * M_PI / 180);
         glm::vec2 position(x_pos_, y_pos_);
         return position;
     }

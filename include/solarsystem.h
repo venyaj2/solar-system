@@ -56,11 +56,6 @@ namespace solarsystem {
     private:
         
         /**
-         * Holding
-         */
-        float holding_;
-        
-        /**
          * Dimension for center of screen
          */
         glm::vec2 center;
