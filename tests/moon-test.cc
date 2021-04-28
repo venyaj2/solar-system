@@ -9,6 +9,7 @@
 TEST_CASE("Test proper initialization of Moon") {
     solarsystem::Moon moon(4, 2, 1, 2);
     SECTION("Check setter methods") {
-        REQUIRE(moon.UpdateDegree() == 5);
+        moon.SetAngle(5);
+        REQUIRE(moon.GetAngle() == 5);
     }
 }
