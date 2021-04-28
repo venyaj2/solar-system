@@ -37,7 +37,7 @@ namespace solarsystem {
     }
     
 
-    const Planet Planet::SUN = Planet ("Sun", 40, "yellow", 0, 0, 0,
+    const Planet Planet::SUN = Planet ("Sun", 40, "gold", 0, 0, 0,
                   "Moons: None \nDistance from Sun: 35.98 million mi\nRadius: 1,516 mi\nDiameter:"
                                   " 4,879 km\nOrbital period: 88 days"
                                   "\nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C", 0, 0);
