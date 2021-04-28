@@ -46,10 +46,6 @@ namespace solarsystem {
                 ci::gl::drawSolidCircle(position + CalculatePositionMoons(planets_[i].GetMoons()[j]),
                                         planets_[i].GetMoons()[j].GetRadius(), 40);
             }
-            
-            /*glm::vec3 vector(CalculatePosition (planets_[i]).x, CalculatePosition(planets_[i]).y, planets_[i].GetRadius() / 2.0);
-            ci::gl::drawSphere(vector, planets_[i].GetRadius());*/
-            
     }
         //Change from circles to spheres
     }
@@ -61,26 +57,18 @@ namespace solarsystem {
                 planets_[i].GetMoons()[j].SetAngle(planets_[i].GetMoons()[j].GetAngle() + planets_[i].GetMoons()[j].GetVelocity());
             }
         }
-
-        //To Do: Change distance based on ellipse
     }
-
-    //Make sure angle matches velocity (90 degrees divided by distance when it's halfway through)
+    
     glm::vec2 SolarSystem::CalculatePositionPlanet(Planet planet) const {
         float x_pos_ = center.x + planet.GetDistanceX() * cos(planet.GetAngle() * M_PI / 180);
         float y_pos_ = center.y + planet.GetDistanceY() * sin(planet.GetAngle() * M_PI / 180);
         glm::vec2 position(x_pos_, y_pos_);
         return position;
-        
-        //Planning ellipse:
-        //Whenever 0 degrees or 180 degrees, must be x distance
-        //Whenever 90 degrees or 270 degrees, must be y distance
-        //In between, must be leading up to other distance
     }
     
 
     void SolarSystem::DisplayStars() {
-        ci::gl::color(ci::Color("white"));
+        ci::gl::color(ci::Color(rand() % 8, rand() % 8, rand() % 8));
         for (size_t j = 0; j < GetXDimension() * GetYDimension() / (GetXDimension() + GetYDimension() * 6); j++) {
             glm::vec2 position_(rand() % (int)GetXDimension(), rand() % (int)GetYDimension());
             ci::gl::drawSolidCircle(position_, (rand() % 100) /100.0, 40);
