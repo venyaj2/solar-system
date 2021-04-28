@@ -18,12 +18,4 @@ namespace solarsystem {
     }
 
     Moon::Moon() {}
-
-    float Moon::UpdateDegree() {
-        std::cout<< "IN METHOD: " << degree_from_center_<<std::endl;
-        degree_from_center_ += velocity_;
-        std::cout<< "IN METHOD: " << degree_from_center_<<std::endl;
-        std::cout<< "IN METHOD: " << GetAngle() <<std::endl;
-        return GetAngle();
-    };
 }

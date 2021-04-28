@@ -35,8 +35,10 @@ namespace solarsystem {
         float GetDistance() const {
             return distance_from_center_;
         }
-
-        float UpdateDegree();
+        
+        void SetAngle(float angle) {
+            degree_from_center_ = angle;
+        }
 
         float GetVelocity() {
             return velocity_;
