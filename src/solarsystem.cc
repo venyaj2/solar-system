@@ -68,7 +68,7 @@ namespace solarsystem {
     //Make sure angle matches velocity (90 degrees divided by distance when it's halfway through)
     glm::vec2 SolarSystem::CalculatePositionPlanet(Planet planet) const {
         float x_pos_ = center.x + planet.GetDistanceX() * cos(planet.GetAngle() * M_PI / 180);
-        float y_pos_ = center.y + planet.GetDistanceX() * sin(planet.GetAngle() * M_PI / 180);
+        float y_pos_ = center.y + planet.GetDistanceY() * sin(planet.GetAngle() * M_PI / 180);
         glm::vec2 position(x_pos_, y_pos_);
         return position;
         
