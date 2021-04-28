@@ -45,13 +45,13 @@ TEST_CASE("Test correctly initializes solarsystem") {
 TEST_CASE("Test CalculatePosition()") {
     solarsystem::SolarSystem solarSystem(500, 800);
     glm::vec2 position(250, 400);
-    REQUIRE(solarSystem.CalculatePosition(solarSystem.GetPlanets().at(0)) == position);
+    REQUIRE(solarSystem.CalculatePositionPlanet(solarSystem.GetPlanets().at(0)) == position);
 
-    REQUIRE(solarSystem.CalculatePosition(solarSystem.GetPlanets().at(1)).x == Approx(277.23).epsilon(.01));
-    REQUIRE(solarSystem.CalculatePosition(solarSystem.GetPlanets().at(1)).y == Approx(441.93).epsilon(.01));
+    REQUIRE(solarSystem.CalculatePositionPlanet(solarSystem.GetPlanets().at(1)).x == Approx(277.23).epsilon(.01));
+    REQUIRE(solarSystem.CalculatePositionPlanet(solarSystem.GetPlanets().at(1)).y == Approx(441.93).epsilon(.01));
 
-    REQUIRE(solarSystem.CalculatePosition(solarSystem.GetPlanets().at(8)).x == Approx(410).epsilon(.01));
-    REQUIRE(solarSystem.CalculatePosition(solarSystem.GetPlanets().at(8)).y == Approx(122.87).epsilon(.01));
+    REQUIRE(solarSystem.CalculatePositionPlanet(solarSystem.GetPlanets().at(8)).x == Approx(410).epsilon(.01));
+    REQUIRE(solarSystem.CalculatePositionPlanet(solarSystem.GetPlanets().at(8)).y == Approx(122.87).epsilon(.01));
 }
 
 TEST_CASE("Test AdvanceOneFrame()") {
