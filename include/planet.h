@@ -62,7 +62,7 @@ namespace solarsystem {
             return velocity_;
         }
         
-        std::vector<solarsystem::Moon> GetMoons() const {
+        std::vector<solarsystem::Moon>& GetMoons() {
             return moons;
         }
         

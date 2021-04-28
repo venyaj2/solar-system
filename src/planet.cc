@@ -31,7 +31,7 @@ namespace solarsystem {
         description_ = description;
         velocity_ = velocity;
         for (size_t i = 0; i < number_of_moons; i++) {
-            Moon moon((rand() % 360), radius_ * 2, 2, radius_ / 2);
+            Moon moon(360.0 * i / number_of_moons, radius_ * 2, velocity_ * 2, radius_ / 2);
             moons.push_back(moon);
         }
     }
@@ -50,13 +50,13 @@ namespace solarsystem {
 
     const Planet Planet::MARS = Planet("Mars", 8, "red", 137, 200, 130, "Mars", 1, 1);
 
-    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 4);
+    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 7);
 
-    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 300, 320, "Saturn", .7, 3);
+    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 340, 320, "Saturn", .7, 5);
 
-    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 360, 340, "Uranus", .3, 2);
+    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 370, 340, "Uranus", .3, 3);
 
-    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 400, 400, "Neptune", .2, 2);
+    const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 430, 400, "Neptune", .2, 3);
     
 
 } //namespace solarsystem
