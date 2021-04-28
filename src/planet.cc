@@ -31,7 +31,7 @@ namespace solarsystem {
         description_ = description;
         velocity_ = velocity;
         for (size_t i = 0; i < number_of_moons; i++) {
-            Moon moon(360.0 * i / number_of_moons, radius_ * 2, velocity_ * 2, radius_ / 2);
+            Moon moon(360.0 * i / number_of_moons, radius_ * 2, velocity_ * 2, .25 * radius_);
             moons.push_back(moon);
         }
     }
@@ -42,19 +42,19 @@ namespace solarsystem {
                                   " 4,879 km\nOrbital period: 88 days"
                                   "\nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C", 0, 0);
 
-    const Planet Planet::MERCURY = Planet("Mercury", 4, "gray", 57, 48, 55, "Radius: 432,690 mi\nDiameter: 1.3927 million km\nMass: 31.989 × 10^30 kg\nSurface Temperature: 5,505°C\nNumber of Moons: None\nFirst Record: 14th century BCE by Assyrian astronomers", 3, 0);
+    const Planet Planet::MERCURY = Planet("Mercury", 4, "gray", 55, 45, 55, "Radius: 432,690 mi\nDiameter: 1.3927 million km\nMass: 31.989 × 10^30 kg\nSurface Temperature: 5,505°C\nNumber of Moons: None\nFirst Record: 14th century BCE by Assyrian astronomers", 3, 0);
     
-    const Planet Planet::VENUS = Planet("Venus", 6, "brown", 87, 65, 70, "Venus", 2, 0);
+    const Planet Planet::VENUS = Planet("Venus", 6, "brown", 75, 84, 65, "Venus", 2, 0);
 
-    const Planet Planet::EARTH = Planet("Earth", 10, "green", 97, 90, 95, "Earth", 1.3, 1);
+    const Planet Planet::EARTH = Planet("Earth", 10, "green", 100, 98, 100, "Earth", 1.3, 1);
 
-    const Planet Planet::MARS = Planet("Mars", 8, "red", 137, 200, 130, "Mars", 1, 1);
+    const Planet Planet::MARS = Planet("Mars", 8, "red", 127, 160, 150, "Mars", 1, 1);
 
-    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 260, 278, "Jupiter", .8, 7);
+    const Planet Planet::JUPITER = Planet("Jupiter", 17, "orange", 200, 240, 278, "Jupiter", .8, 11);
 
-    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 340, 320, "Saturn", .7, 5);
+    const Planet Planet::SATURN = Planet("Saturn", 14, "yellow", 193, 340, 310, "Saturn", .7, 5);
 
-    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 370, 340, "Uranus", .3, 3);
+    const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 390, 340, "Uranus", .3, 2);
 
     const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 430, 400, "Neptune", .2, 3);
     
