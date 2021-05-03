@@ -22,7 +22,7 @@ namespace solarsystem {
              * @param color of planet
              */
         Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center_x, float distance_from_center_y, std::string description,
-               float velocity, size_t number_of_moons);
+               float velocity, size_t number_of_moons, const std::string file);
 
         Planet();
 
@@ -64,6 +64,10 @@ namespace solarsystem {
         
         std::vector<solarsystem::Moon>& GetMoons() {
             return moons;
+        }
+        
+        std::string GetFile() {
+            return file_;
         }
         
         /**
@@ -144,7 +148,6 @@ namespace solarsystem {
          */
         float radius_;
         
-
         /**
          * The color of the planet
          */
@@ -159,6 +162,11 @@ namespace solarsystem {
           * The velocity of the planet 
           */
           float velocity_;
+          
+          /**
+           * Texture file
+           */
+           std::string file_;
           
     };
 }
