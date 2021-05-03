@@ -33,12 +33,6 @@ namespace solarsystem {
         glm::vec2 CalculatePositionPlanet(Planet planet) const;
 
         glm::vec2 CalculatePositionMoons(Moon moon);
-        
-        /**
-         * Parses data from JSON
-         * @param file_ JSON
-         */
-        void ParseData(std::string file_);
 
         std::vector<Planet> GetPlanets() const {
             return planets_;
@@ -53,7 +47,25 @@ namespace solarsystem {
         }
 
         void DisplayStars();
+
+        ci::gl::Texture2dRef SetUp(Planet planet);
+        
+        void DisplayDescription();
+        
+        bool GetDisplayDescription() {
+            return display_description_;
+        }
+        
+        void setDisplayDescription(bool description) {
+            display_description_ = description;
+        }
+        
     private:
+        
+        /**
+         * Whether or not to display description
+         */
+        bool display_description_;
         
         /**
          * Dimension for center of screen
@@ -64,6 +76,11 @@ namespace solarsystem {
          * Vector containing planets belonging to solar system
          */
         std::vector<Planet> planets_;
+        
+        /**
+         * Holds texture for each planet
+         */
+        ci::gl::Texture2dRef texture;
     };
 
 } //namespace solarsystem
