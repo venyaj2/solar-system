@@ -23,4 +23,17 @@ namespace solarsystem {
         solarsystem.AdvanceOneFrame();
     }
 
+    /*void SolarSystemApp::mouseDown(ci::app::MouseEvent event) {
+        switch (event.getCode()) {
+            case ci::app::KeyEvent::KEY_RETURN:
+                ClassifyImage();
+                break;
+
+            case ci::app::KeyEvent::KEY_DELETE:
+                sketchpad_.Clear();
+                current_prediction_ = -1;
+                break;
+        }
+    }*/
+
 }  // namespace solarsystem
