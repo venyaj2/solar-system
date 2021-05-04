@@ -14,7 +14,6 @@ namespace solarsystem {
     
     class Planet {
     public:
-        
         /**
              * Creates a new planet instance
              * @param mass of planet
@@ -122,12 +121,9 @@ namespace solarsystem {
         void SetVisibleDescription(bool setter) {
             visible_description_ = setter;
         }
-        //float AdvanceOneFrameMoon();
-
     private:
-
         /**
-         * Boolean to show description
+         * Boolean that determines whether or not the description is visible
          */
         bool visible_description_;
         
@@ -177,22 +173,8 @@ namespace solarsystem {
           float velocity_;
           
           /**
-           * Texture file
+           * Description
            */
            std::string file_;
-           
-           /**
-            * OpenGL Variable
-            */
-            //GLuint texBufferID;
-            
-            /**
-             * Shader variables
-             */
-             //GLuint texCoordID, texID;
-             
-             //GLubyte image[30][30];
-             
-             //GLfloat* uvs;
     };
 }

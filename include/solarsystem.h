@@ -7,7 +7,6 @@
 #include <vector>
 #include "planet-texture.h"
 
-
 namespace solarsystem {
 
 /**
@@ -27,12 +26,17 @@ namespace solarsystem {
         void AdvanceOneFrame();
 
         /**
-         * Calculates circular position of planet based on degree from center
+         * Calculates elliptical position of planet based on degree from center
          * @param planet 
          * @return vector containing x and y position of planet
          */
         glm::vec2 CalculatePositionPlanet(Planet planet) const;
 
+        /**
+         * Calculates circular position of moon based on degree from center
+         * @param planet 
+         * @return vector containing x and y position of moon
+         */
         glm::vec2 CalculatePositionMoons(Moon moon);
 
         std::vector<Planet> GetPlanets() const {
@@ -47,9 +51,10 @@ namespace solarsystem {
             return center.y * 2;
         }
 
+        /**
+         * Displays a series of randomized stars
+         */
         void DisplayStars();
-
-        void SetUp(Planet planet);
         
         /**
          * Check position click
@@ -66,6 +71,10 @@ namespace solarsystem {
          */
         void Pause();
         
+        /**
+         * Parses and draws from descripiton file of planet
+         * @param planet 
+         */
         void DrawDescription(Planet planet);
         
     private:
@@ -87,19 +96,6 @@ namespace solarsystem {
          * Vector containing sun belonging to solar system
          */
         std::vector<Planet> planets_;
-        
-        /**
-         * Holds texture for each planet
-         */
-        cinder::CameraPersp	mCam; 
-        
-        ci::gl::Texture2dRef texture;
-
-        ci::gl::TextureRef mTexture;
-
-        ci::gl::GlslProgRef	mGlsl;
-
-        ci::gl::BatchRef mSphere;
     };
 
 } //namespace solarsystem
