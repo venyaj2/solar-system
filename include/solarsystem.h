@@ -50,23 +50,17 @@ namespace solarsystem {
 
         ci::gl::Texture2dRef SetUp(Planet planet);
         
-        void DisplayDescription();
-        
-        bool GetDisplayDescription() {
-            return display_description_;
-        }
-        
-        void setDisplayDescription(bool description) {
-            display_description_ = description;
-        }
+        /**
+         * Check position click
+         */
+        void CheckPosition(glm::vec2 pos);
+
+        /**
+         * Clears descriptions
+         */
+        void ClearDescriptions();
         
     private:
-        
-        /**
-         * Whether or not to display description
-         */
-        bool display_description_;
-        
         /**
          * Dimension for center of screen
          */
