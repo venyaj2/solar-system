@@ -26,9 +26,8 @@ namespace solarsystem {
 
         void update() override;
 
-        /*void mouseDown(ci::app::MouseEvent event) override;
-        void mouseDrag(ci::app::MouseEvent event) override;
-        void keyDown(ci::app::KeyEvent event) override;*/
+        void mouseDown(ci::app::MouseEvent event) override;
+        void keyDown(ci::app::KeyEvent event) override;
 
     private:
         solarsystem::SolarSystem solarsystem = SolarSystem(900, 900);
