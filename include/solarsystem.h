@@ -61,7 +61,16 @@ namespace solarsystem {
          */
         void ClearDescriptions();
         
+        /**
+         * Pauses motion
+         */
+        void Pause();
+        
     private:
+        /**
+         * Playing boolean
+         */
+        bool play;
         
         /**
          * Image
@@ -80,7 +89,15 @@ namespace solarsystem {
         /**
          * Holds texture for each planet
          */
+        cinder::CameraPersp	mCam; 
+        
         ci::gl::Texture2dRef texture;
+
+        ci::gl::TextureRef mTexture;
+
+        ci::gl::GlslProgRef	mGlsl;
+
+        ci::gl::BatchRef mSphere;
     };
 
 } //namespace solarsystem
