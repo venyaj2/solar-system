@@ -23,17 +23,15 @@ namespace solarsystem {
         solarsystem.AdvanceOneFrame();
     }
 
-    /*void SolarSystemApp::mouseDown(ci::app::MouseEvent event) {
-        switch (event.getCode()) {
-            case ci::app::KeyEvent::KEY_RETURN:
-                ClassifyImage();
-                break;
+    void SolarSystemApp::mouseDown(ci::app::MouseEvent event) {
+       solarsystem.CheckPosition( event.getPos());
+    }
 
-            case ci::app::KeyEvent::KEY_DELETE:
-                sketchpad_.Clear();
-                current_prediction_ = -1;
-                break;
+    void SolarSystemApp::keyDown(ci::app::KeyEvent event) {
+        AppBase::keyDown(event);
+        if (ci::app::KeyEvent::KEY_DELETE) {
+            solarsystem.ClearDescriptions();
         }
-    }*/
+    }
 
 }  // namespace solarsystem
