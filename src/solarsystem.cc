@@ -16,7 +16,6 @@ namespace solarsystem {
             throw std::invalid_argument("Entered invalid dimension");
         }
         
-        display_description_ = true;
         center = glm::vec2(dimension_x/2, dimension_y/2);
         
         planets_.push_back(Planet::SUN);
@@ -77,7 +76,7 @@ namespace solarsystem {
                                   vec2(CalculatePositionPlanet(planets_[i]).x + (planets_[i].GetRadius() * 2), CalculatePositionPlanet(planets_[i]).y + 1)));
             }
             
-            if (display_description_ == true) {
+            if (planets_[i].GetVisibleDescription()) {
                 ci::gl::color(ci::Color("white"));
                 ci::gl::drawSolidRect(ci::Rectf(vec2(CalculatePositionPlanet(planets_[i]).x - (60 + planets_[i].GetRadius()), CalculatePositionPlanet(planets_[i]).y - (60 + planets_[i].GetRadius())),
                                       vec2(CalculatePositionPlanet(planets_[i]).x + (60 + planets_[i].GetRadius()), CalculatePositionPlanet(planets_[i]).y + (60 + planets_[i].GetRadius()))));
@@ -137,5 +136,22 @@ namespace solarsystem {
         
         return texture;
     }
+
+    void SolarSystem::CheckPosition(glm::vec2 pos) {
+        float index_of_minimum_distance = 0;
+        for (size_t i = 1; i < planets_.size(); i++) {
+            if (glm::distance(CalculatePositionPlanet(planets_[i]), pos) < glm::distance(CalculatePositionPlanet(planets_[index_of_minimum_distance]), pos)) {
+                index_of_minimum_distance = i;
+            }
+        }
+        planets_[index_of_minimum_distance].SetVisibleDescription(true);
+    }
+
+    void SolarSystem::ClearDescriptions() {
+        for (size_t i = 0; i < planets_.size(); i++) {
+            planets_[i].SetVisibleDescription(false);
+        }
+    }
+
 
 } //namespace solarsystem
