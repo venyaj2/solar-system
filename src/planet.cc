@@ -42,7 +42,7 @@ namespace solarsystem {
     
 
     //Initializes planets in solarsystem
-    const Planet Planet::SUN = Planet ("Sun", 40, "gold", 0, 0, 0,"Moons: None \nDistance from Sun: 35.98 million mi\nRadius: 1,516 mi\nDiameter: 4,879 km\nOrbital period: 88 days \nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C", 0,0, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/sun.png");
+    const Planet Planet::SUN = Planet ("Sun", 40, "gold", 0, 0, 0,"Moons: None \nDistance from Sun: 0 million mi\nRadius: 1,516 mi\nDiameter: 4,879 km\nOrbital period: 88 days \nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C", 0,0, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/sun.png");
 
     const Planet Planet::MERCURY = Planet("Mercury", 4, "gray", 55, 45,55, "Radius: 432,690 mi\nDiameter: 1.3927 million km\nMass: 31.989 × 10^30 kg\nSurface Temperature: 5,505°C\nNumber of Moons: None\nFirst Record: 14th century BCE by Assyrian astronomers", 3, 0, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/mercury.jpg");
     
