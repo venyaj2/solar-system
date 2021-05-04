@@ -4,22 +4,24 @@
 
 #ifndef SOLAR_SYSTEM_PLANETTEXTURE_H
 #define SOLAR_SYSTEM_PLANETTEXTURE_H
+#pragma once
 
 #endif //SOLAR_SYSTEM_PLANETTEXTURE_H
 
 #include <string>
 #include <vector>
+#include "cinder/gl/gl.h"
 
 namespace solarsystem {
     class PlanetTexture {
     public:
         PlanetTexture();
-        PlanetTexture(vector<*char> image_layout, size_t dimension_);
-            
+
+        PlanetTexture(cinder::gl::Texture2dRef texture);
+
 
     private:
-        vector<char> image_layout_;
-        
-        size_t dimension;
+        cinder::gl::Texture2dRef texture_;
+
     };
 }
