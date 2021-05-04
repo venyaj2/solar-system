@@ -31,6 +31,7 @@ namespace solarsystem {
         description_ = description;
         velocity_ = velocity;
         file_ = file;
+        visible_description_ = false;
         for (size_t i = 0; i < number_of_moons; i++) {
             Moon moon(360.0 * i / number_of_moons, radius_ * 2.5, velocity_ * 2, .25 * radius_);
             moons.push_back(moon);

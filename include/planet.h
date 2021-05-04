@@ -115,9 +115,22 @@ namespace solarsystem {
          */
         static const Planet NEPTUNE;
         
+        bool GetVisibleDescription() {
+            return visible_description_;
+        }
+        
+        void SetVisibleDescription(bool setter) {
+            visible_description_ = setter;
+        }
         //float AdvanceOneFrameMoon();
 
     private:
+
+        /**
+         * Boolean to show description
+         */
+        bool visible_description_;
+        
         /**
          * Moons
          */
