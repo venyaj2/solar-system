@@ -66,6 +66,8 @@ namespace solarsystem {
          */
         void Pause();
         
+        void DrawDescription(Planet planet);
+        
     private:
         /**
          * Playing boolean
