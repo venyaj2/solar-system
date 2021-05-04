@@ -180,6 +180,19 @@ namespace solarsystem {
            * Texture file
            */
            std::string file_;
-          
+           
+           /**
+            * OpenGL Variable
+            */
+            //GLuint texBufferID;
+            
+            /**
+             * Shader variables
+             */
+             //GLuint texCoordID, texID;
+             
+             //GLubyte image[30][30];
+             
+             //GLfloat* uvs;
     };
 }
