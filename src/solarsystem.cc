@@ -37,22 +37,10 @@ namespace solarsystem {
         DisplayStars();
          
         for (size_t i = 0; i < planets_.size(); i++) {
-            
-            //Renders Image
-            //SetUp(planets_[i]);
-            
-            //Draws Planets
-            /*mCam.lookAt( vec3( 3, 2, 4), vec3( 0 ) );
-            ci::translate(vec3(CalculatePositionPlanet(planets_[i]).x, CalculatePositionPlanet(planets_[i]).y, 0));*/
             ci::gl::color(ci::Color(planets_[i].GetColor()));
             glm::vec2 position (CalculatePositionPlanet(planets_[i]));
             ci::gl::drawSolidCircle(position,
                                     planets_[i].GetRadius(), 40);
-
-            /*ci::gl::clear( ci::Color( 0.2f, 0.2f, 0.2f ) );
-            ci::gl::setMatrices( mCam );
-
-            mSphere->draw();*/
             
             
             //Draws moons
@@ -129,21 +117,6 @@ namespace solarsystem {
         return position;
     }
 
-    void SolarSystem::SetUp(Planet planet) {
-        planetTexture = cinder::gl::Texture2d::create(cinder::loadImage(planet.GetFile()));
-        //myImage = cinder::gl::Texture2d(cinder::loadImage(cinder::app::loadResource(planet.GetFile())));
-        /*auto img = loadImage( cinder::app::loadAsset( planet.GetFile() ) );
-        mTexture = ci::gl::Texture::create( img );
-        mTexture->bind();
-
-        auto shader = ci::gl::ShaderDef().texture().lambert();
-        mGlsl = ci::gl::getStockShader( shader );
-        auto sphere = cinder::geom::Sphere().subdivisions( 50 );
-        mSphere = ci::gl::Batch::create( sphere, mGlsl );
-        ci::gl::enableDepthWrite();
-        ci::gl::enableDepthRead();*/
-    }
-
     void SolarSystem::CheckPosition(glm::vec2 pos) {
         float index_of_minimum_distance = 0;
         for (size_t i = 1; i < planets_.size(); i++) {
@@ -166,13 +139,6 @@ namespace solarsystem {
     }
 
     void SolarSystem::DrawDescription(Planet planet) {
-        //Draw text box
-        /*ci::gl::color(ci::Color("white"));
-        ci::gl::drawSolidRect(
-                ci::Rectf(vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y - (60 + planet.GetRadius())),
-                          vec2(CalculatePositionPlanet(planet).x + (300 + planet.GetRadius()), CalculatePositionPlanet(planet).y + (planet.GetRadius()))));*/
-        
-        
         std::ifstream input_file_ (planet.GetFile());
         size_t counter = 0;
         while (!input_file_.eof()) {
@@ -183,24 +149,5 @@ namespace solarsystem {
                                vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (80 - (12 * counter) + planet.GetRadius())), ci::Color("white"));
             counter++;
         }
-        
-
-        /*ci::gl::drawSolidRect(
-                ci::Rectf(vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y - (60 + planet.GetRadius())),
-                          vec2(CalculatePositionPlanet(planet).x + (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y + (60 + planet.GetRadius()))));
-
-        ci::gl::drawString(planet.GetName(),
-                           vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (60 + planet.GetRadius()) + 5), ci::Color("black"));
-        
-        std::string string = "Moons: ";
-        string.append(std::to_string(planet.GetMoons().size()));
-        ci::gl::drawString(std::string(string),
-                           vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (40 + planet.GetRadius()) + 5), ci::Color("black"));
-
-        ci::gl::drawString(planet.GetDescription(),
-                           vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (20 + planet.GetRadius()) + 5), ci::Color("black"));*/
-        
     }
-
-
 } //namespace solarsystem
