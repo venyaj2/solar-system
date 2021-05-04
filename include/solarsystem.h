@@ -17,12 +17,12 @@ namespace solarsystem {
     public:
         SolarSystem(float dimension_x, float dimension_y);
         /**
-        * Displays the planets and their positions
+        * Displays the sun and their positions
         */
         void Display();
 
         /**
-         * Updates the positions of all planets
+         * Updates the positions of all sun
          */
         void AdvanceOneFrame();
 
@@ -84,7 +84,7 @@ namespace solarsystem {
         glm::vec2 center;
         
         /**
-         * Vector containing planets belonging to solar system
+         * Vector containing sun belonging to solar system
          */
         std::vector<Planet> planets_;
         
