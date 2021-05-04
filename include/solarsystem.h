@@ -5,6 +5,7 @@
 #include "cinder/gl/gl.h"
 #include "planet.h"
 #include <vector>
+#include "planet-texture.h"
 
 
 namespace solarsystem {
@@ -48,7 +49,7 @@ namespace solarsystem {
 
         void DisplayStars();
 
-        ci::gl::Texture2dRef SetUp(Planet planet);
+        void SetUp(Planet planet);
         
         /**
          * Check position click
@@ -61,6 +62,11 @@ namespace solarsystem {
         void ClearDescriptions();
         
     private:
+        
+        /**
+         * Image
+         */
+        PlanetTexture planetTexture;
         /**
          * Dimension for center of screen
          */

@@ -35,13 +35,16 @@ namespace solarsystem {
         
         for (size_t i = 0; i < planets_.size(); i++) {
             
+            //Renders Image
+            //SetUp(planets_[i]);
+            
+            //Draws Planets
             ci::gl::color(ci::Color(planets_[i].GetColor()));
-            
             glm::vec2 position (CalculatePositionPlanet(planets_[i]));
-            
             ci::gl::drawSolidCircle(position,
                                     planets_[i].GetRadius(), 40);
             
+            //Draws moons
             for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
                 ci::gl::color(ci::Color("gray"));
                 ci::gl::drawSolidCircle(position + CalculatePositionMoons(planets_[i].GetMoons()[j]),
@@ -119,22 +122,9 @@ namespace solarsystem {
         return position;
     }
 
-    ci::gl::Texture2dRef SolarSystem::SetUp(Planet planet) {
-        //https://libcinder.org/docs/guides/opengl/part4.html
-        ci::gl::BatchRef mCircle;
-        ci::gl::GlslProgRef mGlsl;
-        auto img = cinder::loadImage(cinder::app::loadAsset(planet.GetFile()));
-        texture = ci::gl::Texture2d::create(img);
-        texture->bind();
-
-        auto shader = ci::gl::ShaderDef().texture().lambert();
-        mGlsl = ci::gl::getStockShader( shader );
-        auto circle = cinder::geom::Circle().subdivisions( 50 );
-        mCircle = ci::gl::Batch::create(circle, mGlsl);
-
-        ci::gl::enableDepthWrite();
-        
-        return texture;
+    void SolarSystem::SetUp(Planet planet) {
+        //ci::Url url(planet.GetFile());
+        //planetTexture = cinder::gl::Texture2d::create(loadImage(loadUrl(url)));
     }
 
     void SolarSystem::CheckPosition(glm::vec2 pos) {
