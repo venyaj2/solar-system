@@ -28,9 +28,14 @@ namespace solarsystem {
     }
 
     void SolarSystemApp::keyDown(ci::app::KeyEvent event) {
-        AppBase::keyDown(event);
-        if (ci::app::KeyEvent::KEY_DELETE) {
-            solarsystem.ClearDescriptions();
+        switch (event.getCode()) {
+            case ci::app::KeyEvent::KEY_DELETE:
+                solarsystem.ClearDescriptions();
+                break;
+
+            case ci::app::KeyEvent::KEY_SPACE:
+                solarsystem.Pause();
+                break;
         }
     }
 
