@@ -8,10 +8,9 @@
 #endif //SOLAR_SYSTEM_PLANET_H
 #include <vector>
 #include "moon.h"
-//#include <moon.h>
 
 namespace solarsystem {
-    
+
     class Planet {
     public:
         /**
@@ -28,47 +27,47 @@ namespace solarsystem {
         float GetRadius() const{
             return radius_;
         }
-        
+
         char* GetColor() const{
             return color_;
         }
-        
+
         float GetAngle() const{
             return degree_from_center_;
         }
-        
+
         float GetDistanceX() const {
             return distance_from_center_x_;
         }
-        
+
         float GetDistanceY() const {
             return distance_from_center_y_;
         }
-        
+
         std::string GetName() const {
             return name_;
         }
-        
+
         void SetDegree(float degree) {
             degree_from_center_ = degree;
         }
-        
+
         std::string GetDescription() const {
             return description_;
         }
-        
+
         float GetVelocity() {
             return velocity_;
         }
-        
+
         std::vector<solarsystem::Moon>& GetMoons() {
             return moons;
         }
-        
+
         std::string GetFile() {
             return file_;
         }
-        
+
         /**
          * Enum for Sun
          */
@@ -113,11 +112,11 @@ namespace solarsystem {
          * Enum for Neptune
          */
         static const Planet NEPTUNE;
-        
+
         bool GetVisibleDescription() {
             return visible_description_;
         }
-        
+
         void SetVisibleDescription(bool setter) {
             visible_description_ = setter;
         }
@@ -126,26 +125,26 @@ namespace solarsystem {
          * Boolean that determines whether or not the description is visible
          */
         bool visible_description_;
-        
+
         /**
          * Moons
          */
-         std::vector<Moon> moons;
-        
+        std::vector<Moon> moons;
+
         /**
          * Name of planet
          */
-        std::string name_; 
-        
+        std::string name_;
+
         /**
          * The distance of planet from center x
          */
-         float distance_from_center_x_;
-         
-         /**
-          * The distance of the planet from center y
-          */
-          float distance_from_center_y_;
+        float distance_from_center_x_;
+
+        /**
+         * The distance of the planet from center y
+         */
+        float distance_from_center_y_;
 
         /**
          * The degree from the center of what is being revolved
@@ -156,25 +155,25 @@ namespace solarsystem {
          * The radius of the planet
          */
         float radius_;
-        
+
         /**
          * The color of the planet
          */
         char* color_;
-        
+
         /**
          * The description of the planet
          */
-         std::string description_;
-         
-         /**
-          * The velocity of the planet 
-          */
-          float velocity_;
-          
-          /**
-           * Description
-           */
-           std::string file_;
+        std::string description_;
+
+        /**
+         * The velocity of the planet 
+         */
+        float velocity_;
+
+        /**
+         * Description
+         */
+        std::string file_;
     };
 }
