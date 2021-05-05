@@ -1,5 +1,8 @@
 #SolarSystem
 
+![Image of SolarSystem]
+(file:///Users/venyajoshi/Desktop/Screen%20Shot%202021-05-04%20at%207.01.14%20PM.png)
+
 * Overview
 * Requirements
 * Installation
@@ -20,11 +23,3 @@ Steps:
 ##Code Style
 I used Google C++ Style Guide (https://google.github.io/styleguide/cppguide.html)
 
-
-
-
-
-
-Fill this in before the final project deadline. Someone who has _no familiarity_ with your project should be able to read this and understand:
-* what your project does
-* how to set it up and run it
