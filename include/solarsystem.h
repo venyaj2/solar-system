@@ -5,7 +5,6 @@
 #include "cinder/gl/gl.h"
 #include "planet.h"
 #include <vector>
-#include "planet-texture.h"
 
 namespace solarsystem {
 
@@ -83,10 +82,6 @@ namespace solarsystem {
          */
         bool play;
         
-        /**
-         * Image
-         */
-        PlanetTexture planetTexture;
         /**
          * Dimension for center of screen
          */
