@@ -118,7 +118,7 @@ namespace solarsystem {
                 index_of_minimum_distance = i;
             }
         }
-        planets_[index_of_minimum_distance].SetVisibleDescription(true);
+        planets_[index_of_minimum_distance].SetVisibleDescription(!planets_[index_of_minimum_distance].GetVisibleDescription());
     }
 
     void SolarSystem::ClearDescriptions() {
@@ -134,12 +134,18 @@ namespace solarsystem {
     void SolarSystem::DrawDescription(Planet planet) {
         std::ifstream input_file_ (planet.GetFile());
         size_t counter = 0;
+        ci::Font kLabelFont;
         while (!input_file_.eof()) {
+            if (counter == 0) {
+                kLabelFont = ci::Font("Times New Roman", 16);
+            } else {
+                kLabelFont = ci::Font("Times New Roman", 14);
+            }
             std::string line_;
             std::string fulltext_;
             std::getline(input_file_, line_);
             ci::gl::drawString(line_,
-                               vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (80 - (12 * counter) + planet.GetRadius())), ci::Color("white"));
+                               vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (100 - (15 * counter) + planet.GetRadius())), ci::Color("white"), kLabelFont);
             counter++;
         }
     }
