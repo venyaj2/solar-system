@@ -6,7 +6,7 @@
 * Installation
 
 ##Overview
-I created a solarsystem simulation containing 8 planets, several moons and stars, and a sun. The planets and moons rotate around their given axes, and users can interact with the simulation.
+I created a solarsystem simulation containing 8 planets, several moons and stars, and a sun. The planets and moons rotate around their given axes, and users can interact with the simulation. One mouse-click on a planet will display a description, another ouse-click on the same planet will remove the description. The space key will pause the planets in the simulation, while the delete key will remove all of the visible descriptions.
 
 ##Requirements
 Cinder OpenGL API is required for visualizations, version 0.9.2 or later.
