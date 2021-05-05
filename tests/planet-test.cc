@@ -7,14 +7,14 @@
 #include <planet.h>
 
 TEST_CASE("Test proper initialization of planet") {
-    solarsystem::Planet planet("Pluto", 4, "gray", 55, 19, 700, "Dwarf planet, formally removed from planet circulation by NASA",8, 0);
+    solarsystem::Planet planet("Pluto", 4, "gray", 55, 19, 700, 8, 0, 0);
     SECTION("Test initialized Planet getters") {
         REQUIRE(planet.GetAngle() == 55);
         REQUIRE(planet.GetDistanceX() == 700);
         REQUIRE(planet.GetRadius() == 4);
         REQUIRE(planet.GetColor() == std::string("gray"));
     }
-    
+
     SECTION("Test initialized Planet setters") {
         planet.SetDegree(89);
         REQUIRE(planet.GetAngle() == 89);
