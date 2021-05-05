@@ -20,7 +20,7 @@ namespace solarsystem {
              * @param radius of planet
              * @param color of planet
              */
-        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center_x, float distance_from_center_y, std::string description,
+        Planet(const std::string name, float radius, const std::string color, float degree_from_center, float distance_from_center_x, float distance_from_center_y,
                float velocity, size_t number_of_moons, const std::string file);
 
         Planet();
