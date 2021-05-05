@@ -166,26 +166,9 @@ namespace solarsystem {
     }
 
     void SolarSystem::DrawDescription(Planet planet) {
-        //Draw text box
-        /*ci::gl::color(ci::Color("white"));
-        ci::gl::drawSolidRect(
-                ci::Rectf(vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y - (60 + planet.GetRadius())),
-                          vec2(CalculatePositionPlanet(planet).x + (300 + planet.GetRadius()), CalculatePositionPlanet(planet).y + (planet.GetRadius()))));*/
-        
-        
-        std::ifstream input_file_ (planet.GetFile());
-        size_t counter = 0;
-        while (!input_file_.eof()) {
-            std::string line_;
-            std::string fulltext_;
-            std::getline(input_file_, line_);
-            ci::gl::drawString(line_,
-                               vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (80 - (12 * counter) + planet.GetRadius())), ci::Color("white"));
-            counter++;
-        }
-        
+        ci::gl::color(ci::Color("white"));
 
-        /*ci::gl::drawSolidRect(
+        ci::gl::drawSolidRect(
                 ci::Rectf(vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y - (60 + planet.GetRadius())),
                           vec2(CalculatePositionPlanet(planet).x + (60 + planet.GetRadius()), CalculatePositionPlanet(planet).y + (60 + planet.GetRadius()))));
 
@@ -198,7 +181,7 @@ namespace solarsystem {
                            vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (40 + planet.GetRadius()) + 5), ci::Color("black"));
 
         ci::gl::drawString(planet.GetDescription(),
-                           vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (20 + planet.GetRadius()) + 5), ci::Color("black"));*/
+                           vec2(CalculatePositionPlanet(planet).x - (60 + planet.GetRadius()) + 5, CalculatePositionPlanet(planet).y - (20 + planet.GetRadius()) + 5), ci::Color("black"));
         
     }
 
