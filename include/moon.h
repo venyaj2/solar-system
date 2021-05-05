@@ -12,6 +12,7 @@ namespace solarsystem {
 
     class Moon {
     public:
+
         /**
              * Creates a new planet instance
              * @param mass of planet
@@ -44,6 +45,7 @@ namespace solarsystem {
         }
         
     private:
+        
         /**
          * The distance of moon from center
          */
@@ -63,5 +65,7 @@ namespace solarsystem {
          * The velocity of the planet 
          */
         float velocity_;
+        
+
     };
 }

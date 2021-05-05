@@ -21,8 +21,11 @@ namespace solarsystem {
     class SolarSystemApp : public ci::app::App {
     public:
         SolarSystemApp();
+
         void draw() override;
+
         void update() override;
+
         void mouseDown(ci::app::MouseEvent event) override;
         void keyDown(ci::app::KeyEvent event) override;
 

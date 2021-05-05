@@ -14,6 +14,8 @@ namespace solarsystem {
     void SolarSystemApp::draw() {
         ci::Color background_color("black");
         ci::gl::clear(background_color);
+        
+
         solarsystem.Display();
     }
 
@@ -36,4 +38,5 @@ namespace solarsystem {
                 break;
         }
     }
+
 }  // namespace solarsystem

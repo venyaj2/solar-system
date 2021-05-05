@@ -8,6 +8,7 @@
 
 
 namespace solarsystem {
+
     using glm::vec2;
     using glm::vec3;
     
@@ -15,7 +16,9 @@ namespace solarsystem {
         if (dimension_x <= 0 || dimension_y <= 0) {
             throw std::invalid_argument("Entered invalid dimension");
         }
+        
         center = glm::vec2(dimension_x/2, dimension_y/2);
+        
         planets_.push_back(Planet::SUN);
         planets_.push_back(Planet::MERCURY);
         planets_.push_back(Planet::VENUS);
@@ -25,7 +28,9 @@ namespace solarsystem {
         planets_.push_back(Planet::SATURN);
         planets_.push_back(Planet::URANUS);
         planets_.push_back(Planet::NEPTUNE);
+        
         play = true;
+        
     }
 
     void SolarSystem::Display() {
@@ -36,6 +41,7 @@ namespace solarsystem {
             glm::vec2 position (CalculatePositionPlanet(planets_[i]));
             ci::gl::drawSolidCircle(position,
                                     planets_[i].GetRadius(), 40);
+            
             
             //Draws moons
             for (size_t j = 0; j < planets_[i].GetMoons().size(); j++) {
@@ -95,6 +101,7 @@ namespace solarsystem {
         return position;
     }
     
+
     void SolarSystem::DisplayStars() {
         ci::gl::color(ci::Color("white"));
         for (size_t j = 0; j < GetXDimension() * GetYDimension() / (GetXDimension() + GetYDimension() * 6); j++) {
@@ -118,7 +125,7 @@ namespace solarsystem {
                 index_of_minimum_distance = i;
             }
         }
-        planets_[index_of_minimum_distance].SetVisibleDescription(!planets_[index_of_minimum_distance].GetVisibleDescription());
+        planets_[index_of_minimum_distance].SetVisibleDescription(true);
     }
 
     void SolarSystem::ClearDescriptions() {
@@ -134,18 +141,12 @@ namespace solarsystem {
     void SolarSystem::DrawDescription(Planet planet) {
         std::ifstream input_file_ (planet.GetFile());
         size_t counter = 0;
-        ci::Font kLabelFont;
         while (!input_file_.eof()) {
-            if (counter == 0) {
-                kLabelFont = ci::Font("Times New Roman", 16);
-            } else {
-                kLabelFont = ci::Font("Times New Roman", 14);
-            }
             std::string line_;
             std::string fulltext_;
             std::getline(input_file_, line_);
             ci::gl::drawString(line_,
-                               vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (100 - (15 * counter) + planet.GetRadius())), ci::Color("white"), kLabelFont);
+                               vec2(CalculatePositionPlanet(planet).x - planet.GetRadius(), CalculatePositionPlanet(planet).y - (80 - (12 * counter) + planet.GetRadius())), ci::Color("white"));
             counter++;
         }
     }

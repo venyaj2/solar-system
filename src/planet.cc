@@ -8,6 +8,7 @@
 #include <moon.h>
 
 namespace solarsystem {
+
     using glm::vec2;
 
     Planet::Planet() {}
@@ -39,7 +40,8 @@ namespace solarsystem {
         }
     }
     
-    //Initializes planets in solarsystem
+
+    //Initializes sun in solarsystem
     const Planet Planet::SUN = Planet ("Sun", 40, "gold", 0, 0, 0,"Moons: None \nDistance from Sun: 0 million mi\nRadius: 1,516 mi\nDiameter: 4,879 km\nOrbital period: 88 days \nMass: 3.285 × 10^23 kg\nSurface Temperature: -173 to 427°C", 0,0, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/sun");
 
     const Planet Planet::MERCURY = Planet("Mercury", 4, "gray", 55, 45,55, "Radius: 432,690 mi\nDiameter: 1.3927 million km\nMass: 31.989 × 10^30 kg\nSurface Temperature: 5,505°C\nNumber of Moons: None\nFirst Record: 14th century BCE by Assyrian astronomers", 3, 0, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/mercury");
@@ -57,4 +59,6 @@ namespace solarsystem {
     const Planet Planet::URANUS = Planet("Uranus", 11, "teal", 280, 390, 340, "Uranus", .3, 2, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/uranus");
 
     const Planet Planet::NEPTUNE = Planet("Neptune", 10, "blue", 300, 430, 400, "Neptune", .2, 3, "/Users/venyajoshi/Downloads/Cinder/my-projects/final-project-venyaj2/assets/neptune");
+    
+
 } //namespace solarsystem
