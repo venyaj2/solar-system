@@ -54,7 +54,7 @@ namespace solarsystem {
          * Displays a series of randomized stars
          */
         void DisplayStars();
-        
+
         /**
          * Check position click
          */
@@ -64,33 +64,32 @@ namespace solarsystem {
          * Clears descriptions
          */
         void ClearDescriptions();
-        
+
         /**
          * Pauses motion
          */
         void Pause();
-        
+
         /**
          * Parses and draws from descripiton file of planet
          * @param planet 
          */
         void DrawDescription(Planet planet);
-        
+
     private:
         /**
          * Playing boolean
          */
         bool play;
-        
+
         /**
          * Dimension for center of screen
          */
         glm::vec2 center;
-        
+
         /**
          * Vector containing sun belonging to solar system
          */
         std::vector<Planet> planets_;
     };
-
 } //namespace solarsystem
