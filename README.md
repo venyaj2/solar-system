@@ -1,8 +1,6 @@
 #SolarSystem
 
-![Image of SolarSystem]
-(file:///Users/venyajoshi/Desktop/Screen%20Shot%202021-05-04%20at%207.01.14%20PM.png)
-
+![Image of SolarSystem](file:///Users/venyajoshi/Desktop/Screen%20Shot%202021-05-04%20at%207.01.14%20PM.png)
 * Overview
 * Requirements
 * Installation
